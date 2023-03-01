@@ -1,0 +1,28 @@
+Create a Grocery Store database
+
+CREATE TABLE storeitems
+(id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, aisle INTEGER, price INTEGER);
+
+INSERT INTO storeitems VALUES
+(1,"Chicken", 12, 3, 6.25),
+(2,"Beef",15,3,8.99),
+(3,"Eggs",24,2,4.25),
+(4,"Apples",30,8,2.15),
+(5,"Oranges",25,8,1.45),
+(6,"Grapes",40,8,3.75),
+(7, "Frozen Pizza",24,6,4.99),
+(8,"Pasta",30,7,1.50),
+(9,"Mayo",15,10,3.15),
+(10,"Ketchup",20,10,2.50);
+SELECT * FROM storeitems;
+
+--Displays storitems from highest to lowest prices
+SELECT * FROM storeitems 
+ORDER BY price desc;
+
+--Displays quantity of items in an aisle
+SELECT aisle, SUM(quantity)
+FROM storeitems GROUP BY aisle;
+
+--Displays items in order by aisle
+SELECT * FROM storeitems ORDER BY aisle;
